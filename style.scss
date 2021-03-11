@@ -1,0 +1,277 @@
+
+@font-face
+{
+      font-family: 'averta_demo_peregular';
+      src: url('/home/sophie/projet/exercices/sass/TpSass/fonts/avertaregular-webfont.eot');
+      src: url('/home/sophie/projet/exercices/sass/TpSass/fonts/franklingothicheavy-webfont.eot') format('embedded-opentype'),
+           url('/home/sophie/projet/exercices/sass/TpSass/fonts/avertaregular-webfont.woff2') format('woff2'),
+           url('/home/sophie/projet/exercices/sass/TpSass/fonts/avertaregular-webfont.woff') format('woff'),
+           url('/home/sophie/projet/exercices/sass/TpSass/fonts/avertaregular-webfont.ttf') format('truetype'),
+           url('/home/sophie/projet/exercices/sass/TpSass/fonts/avertaregular-webfont.svg') format('svg');
+      font-weight: normal;
+      font-style: normal;
+}
+@font-face
+{
+      font-family: 'franklin_gothic_heavyregular';
+      src: url('/home/sophie/projet/exercices/sass/TpSass/fonts/franklingothicheavy-webfont.eot');
+      src: url('/home/sophie/projet/exercices/sass/TpSass/fonts/franklingothicheavy-webfont.eot') format('embedded-opentype'),
+           url('/home/sophie/projet/exercices/sass/TpSass/fonts/franklingothicheavy-webfont.woff2') format('woff2'),
+           url('/home/sophie/projet/exercices/sass/TpSass/fonts/franklingothicheavy-webfont.woff') format('woff'),
+           url('/home/sophie/projet/exercices/sass/TpSass/fonts/franklingothicheavy-webfont.ttf') format('truetype'),
+           url('/home/sophie/projet/exercices/sass/TpSass/fonts/franklingothicheavy-webfont.svg') format('svg');
+      font-weight: normal;
+      font-style: normal;
+}
+
+
+
+
+
+@mixin MainTypography
+{
+  font-family:'averta_demo_peregular', sans-serif;
+  color: $MainColor;
+}
+
+@mixin TitleTypography
+{
+  font-family: 'franklin_gothic_heavyregular',sans-serif;
+  color:$SecondaryColor;
+}
+
+@mixin PaddingTopRight
+{
+  padding-top: 4%;
+  padding-right: 4%;
+}
+
+@mixin PaddingTopLeft
+{
+  padding-top: 4%;
+  padding-left: 4%;
+}
+
+@mixin DisplayFlexJustifyContentSpaceBetween
+{
+  display: flex;
+justify-content: space-between;
+}
+
+@mixin DisplayFlex
+{
+    display: flex;
+    text-align: right;
+    flex-wrap: wrap;
+}
+
+
+
+$MainColor: #3C3C3C;
+$SecondaryColor: #00B3FA;
+$ThirdColor: white;
+
+
+.banner {
+    width: 100%;
+    height: 30vh;
+    color: $ThirdColor;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 2%;
+}
+
+div h1 {
+  @include PaddingTopLeft;
+    text-align: left;
+}
+
+main {
+    text-align: center;
+}
+
+main p {
+  @include MainTypography;
+    width: 80%;
+    margin: 0% auto 2% auto;
+}
+
+
+#banner_services {
+    background-image: url('../images/banniere-v.jpg');
+}
+
+#div_articles {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    margin: 0 auto 1vh auto;
+    text-align: center;
+    gap: 4vh calc(3% - 12px);
+}
+
+article {
+    border: 4px;
+    color: $SecondaryColor;
+    width: 99%;
+    padding: 2% 0%;
+    margin: 0 auto;
+}
+
+#div_articles img {
+    width: 60px;
+    height: 60px;
+}
+
+h2 {
+  @include TitleTypography;
+}
+
+#div_articles a {
+    color: $ThirdColor;
+    background-color: $SecondaryColor;
+   padding: 1%;
+    border-radius: 8px;
+    text-decoration:none;
+    margin: 1% auto;
+}
+
+#banner_history {
+    height: 15vh;
+    background-color: $SecondaryColor;
+  @include MainTypography;
+}
+
+.realisations
+{
+  @include MainTypography;
+}
+
+main li {
+    list-style: none;
+}
+
+main img {
+    width: 40%;
+    vertical-align: middle;
+    margin-left: 10%;
+}
+
+header {
+  @include DisplayFlexJustifyContentSpaceBetween;
+  @include TitleTypography;
+}
+
+header img {
+    width: 10%;
+    height: auto;
+}
+
+header nav {
+    width: 80%;
+    margin-right: 0%;
+}
+
+header ul {
+  @include DisplayFlex;
+    justify-content: flex-end;
+  @include PaddingTopRight;
+  }
+
+header li {
+    padding: 1%;
+    list-style: none;
+}
+
+header a {
+    text-decoration: none;
+    color: $MainColor;
+  :hover
+  {
+  color: $SecondaryColor;
+  }
+}
+ .curent
+ {
+color: $SecondaryColor;
+}
+
+
+
+
+#banner_contact {
+    width: 50%;
+    margin: 0 auto;
+}
+
+p {
+  @include PaddingTopLeft;
+    @include TitleTypography;
+}
+
+input, textarea
+{
+    display: block;
+    margin: 2vh auto;
+    background-color: #00cffa;
+    opacity: 0.5;
+    @include MainTypography;
+    :focus
+    {
+      outline: 2px inset $MainColor;
+     }
+}
+
+button {
+    background-color: $SecondaryColor;
+    padding: 1vh 1vw;
+    border-radius: 10px;
+    @include MainTypography;
+}
+
+#banner_about {
+    background-image: url('../images/banniere-v.jpg');
+}
+
+#main_logo {
+    width: 20%;
+}
+
+footer {
+    background-color: $SecondaryColor;
+    color: white;
+    padding: 5% 0%;
+    margin: 1vh auto 0 auto;
+    @include DisplayFlexJustifyContentSpaceBetween;
+    @include MainTypography;
+}
+
+footer img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+footer nav {
+    width: 100%;
+}
+
+footer ul{
+    margin: 0;
+  @include DisplayFlex;
+    justify-content: space-between;
+  }
+footer li{
+    padding: 1%;
+    list-style-type: none;
+}
+
+
+footer a {
+    color: $ThirdColor;
+    text-decoration: none;
+  :hover
+  {
+    color: $MainColor;
+  }
+}
